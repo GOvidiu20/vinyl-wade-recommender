@@ -1,7 +1,11 @@
+import json
+
 import spacy
 import flask
 from flask import request, jsonify
 from flask_cors import CORS
+
+from VinylRecommender.services.SPARQLService import SPARQLService
 
 app = flask.Flask(__name__)
 CORS(app)
@@ -163,11 +167,31 @@ def get_recommendations(text):
 
     return recommendation
 
+
 @app.route('/text-processing', methods=['POST'])
 def process_text():
     user_input = request.json['text']
     recommendations = get_recommendations(user_input)
     return recommendations
+
+
+sparqlService = SPARQLService()
+
+
+@app.route('/songs', methods=['GET'])
+def get_songs():
+    number = request.args.get('number', default=10, type=int)
+    result = sparqlService.get_songs(number)
+    json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
+    return json_string
+
+
+@app.route('/spotify', methods=['POST'])
+def spotify():
+    data = request.get_json()
+    result = sparqlService.sporify(data["artists"], data["genres"])
+    json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
+    return json_string
 
 
 if __name__ == '__main__':

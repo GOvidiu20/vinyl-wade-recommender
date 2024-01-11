@@ -1,5 +1,4 @@
 
-
 class SPARQLQueryBuilder:
     def __init__(self, query):
         self.query = query
@@ -72,5 +71,14 @@ class SPARQLQueryBuilder:
         album_filters = " || ".join([f'CONTAINS(?vinylLabel, "{album}")' for album in album_names])
         self.query += f'  FILTER({album_filters})\n'
 
+    def add_limit(self, limit_value):
+        if not isinstance(limit_value, int) or limit_value <= 0:
+            raise ValueError("Invalid limit value. Limit must be a positive integer.")
+
+        self.query += f"  LIMIT {limit_value}\n"
+
     def end_query(self):
         self.query = self.query + "}"
+
+    def delete_query(self):
+        self.query = ""
