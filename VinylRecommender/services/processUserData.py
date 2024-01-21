@@ -1,14 +1,4 @@
-import json
-
 import spacy
-import flask
-from flask import request, jsonify
-from flask_cors import CORS
-
-from VinylRecommender.services.SPARQLService import SPARQLService
-
-app = flask.Flask(__name__)
-CORS(app)
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -37,7 +27,7 @@ def split_into_sentences(text):
 preferences = ["love", "like", "hate", "dislike"]
 genres = ["rock", "pop", "jazz", "classical", "metal", "hiphop", "rap", "electronic", "dance", "folk", "country"]
 comparators = ["from", "to", "before", "after"]
-artists = ["Angela Gheorghiu", "Verdi", "Rossini", "Flood"]
+artists = ["Angela Gheorghiu", "Åge Aleksandersen", "Ganafoul", "Verdi", "Rossini", "Flood", "Mroja", "Sonny", "Stan", "The Who", "The Rolling Stones"]
 
 
 def process_music_preference(user_input):
@@ -58,7 +48,8 @@ def process_music_preference(user_input):
 
             # Identify preferences
             if token.text.lower() in preferences:
-                current_entities = {"preference": token.text.lower(), "genres": set(), "artists": set(), "years": [], "year_comparators": None}
+                current_entities = {"preference": token.text.lower(), "genres": set(), "artists": set(), "years": [],
+                                    "year_comparators": None}
 
             # Identify genres
             if token.text.lower() in genres:
@@ -112,87 +103,8 @@ def process_music_preference(user_input):
 
         processed_results.append(current_entities)
 
-        # query = ""
-        # if current_entities["genres"]:
-        #     query += "genre in ("
-        #     for genre in current_entities["genres"]:
-        #         query += genre + ","
-        #
-        #     query = query[:-1]
-        #     query += ") "
-        # if current_entities["artists"]:
-        #     query += "and artist in ("
-        #     for artist in current_entities["artists"]:
-        #         query += artist + ","
-        #     query = query[:-1]
-        #     query += ") "
-        # if current_entities["years"]:
-        #     if current_entities["year_comparators"] == "equal":
-        #         query += f"and year={current_entities['years'][0]} "
-        #     elif current_entities["year_comparators"] == "between":
-        #         query += f"and year >= {current_entities['years'][0]} and year <= {current_entities['years'][1]} "
-        #     elif current_entities["year_comparators"] == "before":
-        #         query += f"and year < {current_entities['years'][0]} "
-        #     elif current_entities["year_comparators"] == "after":
-        #         query += f"and year > {current_entities['years'][0]} "
-        # print(f"Query: {query}\n")
-
-        current_entities = {"preference": current_entities["preference"], "genres": current_entities["genres"], "artists": set(), "years": [],
+        current_entities = {"preference": current_entities["preference"], "genres": current_entities["genres"],
+                            "artists": set(), "years": [],
                             "year_comparators": None}
 
     return processed_results
-
-
-# # Example
-# user_input = ("I love classical music, especially opera by Rossini or Verdi and performed by Angela Gheorghiu from "
-#               "1999 and hate music from Verdi from 2000 to 2005. "
-#               "I sometimes like rock and post-rock. I like only metal albums released before 2000. I "
-#               "always hate rap and pop."
-#               "I dislike songs produced by Flood after 2000")
-# process_music_preference(user_input)
-
-def get_recommendations(text):
-    processed_results = process_music_preference(text)
-    print(processed_results)
-    # query
-
-    recommendation = [
-        {
-            "title": "title 1",
-            "artist": "artist 1",
-            "genre": "genre 1",
-            "year": "year 1",
-        }
-    ]
-
-    return recommendation
-
-
-@app.route('/text-processing', methods=['POST'])
-def process_text():
-    user_input = request.json['text']
-    recommendations = get_recommendations(user_input)
-    return recommendations
-
-
-sparqlService = SPARQLService()
-
-
-@app.route('/songs', methods=['GET'])
-def get_songs():
-    number = request.args.get('number', default=10, type=int)
-    result = sparqlService.get_songs(number)
-    json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
-    return json_string
-
-
-@app.route('/spotify', methods=['POST'])
-def spotify():
-    data = request.get_json()
-    result = sparqlService.sporify(data["artists"], data["genres"])
-    json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
-    return json_string
-
-
-if __name__ == '__main__':
-    app.run()

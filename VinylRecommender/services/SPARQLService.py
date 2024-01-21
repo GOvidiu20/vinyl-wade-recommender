@@ -1,7 +1,9 @@
 from rdflib import Graph
 from rdflib.plugins.sparql import prepareQuery
 
-from VinylRecommender.services.SPARQLQueryBuilder import SPARQLQueryBuilder
+from services.SPARQLQueryBuilder import SPARQLQueryBuilder
+
+from google.cloud import storage
 
 
 class VinylDTO:
@@ -25,14 +27,19 @@ class QueryDTO:
 
 
 class SPARQLService:
-    RDF_FILE_PATH = "VinylRecommender/data/modified_file.ttl"
+    # RDF_FILE_PATH = "VinylRecommender/data/modified_file.ttl"
 
     def executeQuery(self, queryDTO: QueryDTO) -> VinylDTOS:
+
+        storage_client = storage.Client()
+        bucket = storage_client.get_bucket("turtle_file")
+        blob = bucket.blob("modified_file.ttl")
+
         graph = Graph()
-        graph.parse(self.RDF_FILE_PATH, format="turtle")
+        graph.parse(blob.download_as_string(), format="turtle")
+        # graph.parse(self.RDF_FILE_PATH, format="turtle")
         query = prepareQuery(queryDTO.query)
         vinylDTOS = VinylDTOS()
-
         for row in graph.query(query):
             vinylDTO = VinylDTO()
             vinylDTO.album = str(row.album)
@@ -46,16 +53,17 @@ class SPARQLService:
 
         return vinylDTOS
 
-    def get_songs(self, limit):
+    def get_songs(self, user_preferences, limit):
         queryBuilder = SPARQLQueryBuilder("")
         queryBuilder.create_query()
+        queryBuilder.add_filters(user_preferences)
         queryBuilder.end_query()
         queryBuilder.add_limit(limit)
         query_dto = QueryDTO(query=queryBuilder.query)
         result = self.executeQuery(query_dto)
         return result
 
-    def sporify(self, artists, genres):
+    def spotify(self, artists, genres):
         queryBuilder = SPARQLQueryBuilder("")
         queryBuilder.create_query()
         if artists:
