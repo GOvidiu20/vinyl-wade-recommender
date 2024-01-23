@@ -1,5 +1,6 @@
 from rdflib import Graph
 from rdflib.plugins.sparql import prepareQuery
+import requests
 
 from services.SPARQLQueryBuilder import SPARQLQueryBuilder
 
@@ -14,6 +15,7 @@ class VinylDTO:
         self.date = None
         self.vinylLabel = None
         self.title = None
+        self.discogs = None
 
 
 class VinylDTOS:
@@ -48,6 +50,7 @@ class SPARQLService:
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
             vinylDTO.title = str(row.title)
+            vinylDTO.discogs = self.fetch_discogs_data(row.creator)
 
             vinylDTOS.vinylDTOS.append(vinylDTO)
 
@@ -75,6 +78,19 @@ class SPARQLService:
         query_dto = QueryDTO(query=queryBuilder.query)
         result = self.executeQuery(query_dto)
         return result
+
+    def fetch_discogs_data(self, artist_name):
+        api_key = "yGrcPrZCSijvHSNdbtsk"
+        api_secret = "crhtnFdQcgXMVXYtgzBYJnbBGSWOmSZA"
+        discogs_url = f"https://api.discogs.com/database/search?q={artist_name}&key={api_key}&secret={api_secret}"
+        response = requests.get(discogs_url)
+        data = response.json()
+        if 'results' in data and data['results']:
+            rs = data['results'][0]
+            data2 = "https://www.discogs.com" + rs['uri']
+            return data2
+        else:
+            return None
 
 
 # if __name__ == "__main__":
