@@ -11,7 +11,7 @@ class VinylDTO:
     def __int__(self):
         self.album = None
         self.creator = None
-        self.subject = None
+        self.genre = None
         self.date = None
         self.vinylLabel = None
         self.title = None
@@ -46,7 +46,7 @@ class SPARQLService:
             vinylDTO = VinylDTO()
             vinylDTO.album = str(row.album)
             vinylDTO.creator = str(row.creator)
-            vinylDTO.subject = str(row.subject)
+            vinylDTO.genre = str(row.subject)
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
             vinylDTO.title = str(row.title)

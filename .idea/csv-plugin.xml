@@ -1,0 +1,1493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="C:\Python39\Lib\site-packages\matplotlib\mpl-data\sample_data\data_x_x2_x3.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\matplotlib\mpl-data\sample_data\msft.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\matplotlib\mpl-data\sample_data\percent_bachelors_degrees_women_usa.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\core\tests\data\umath-validation-set-exp.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\mt19937-testset-1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\mt19937-testset-2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\pcg64-testset-1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\pcg64-testset-2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\pcg64dxsm-testset-2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\philox-testset-1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\philox-testset-2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\sfc64-testset-1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\numpy\random\tests\data\sfc64-testset-2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\gt_datum.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\ozi_datum.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\ozi_ellips.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\s57agencies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\s57attributes.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\s57expectedinput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\s57objectclasses.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\osgeo\data\gdal\stateplane.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\pystan\tests\data\blocker.1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\pystan\tests\data\blocker.2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\sklearn\datasets\data\boston_house_prices.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\sklearn\datasets\data\breast_cancer.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\sklearn\datasets\data\iris.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\sklearn\datasets\data\wine_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\anes96\anes96.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\cancer\cancer.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\ccard\ccard.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\co2\co2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\committee\committee.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\copper\copper.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\cpunish\cpunish.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\elec_equip\elec_equip.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\fair\fair.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\fair\fair_pt.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\fertility\fertility.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\grunfeld\grunfeld.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\heart\heart.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\interest_inflation\E6.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\longley\longley.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\macrodata\macrodata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\modechoice\modechoice.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\randhie\randhie.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\scotland\scotvote.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\spector\spector.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\star98\star98.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\statecrime\statecrime.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\strikes\strikes.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\datasets\sunspots\sunspots.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\nbinom_resids.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\phat_mnlogit.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\poisson_resid.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\predict_prob_poisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\ships.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\sm3533.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\yhat_mnlogit.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\discrete\tests\results\yhat_poisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\duration\tests\results\bmt_results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\duration\tests\results\survival_data_1000_10.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\duration\tests\results\survival_data_100_5.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\autos.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\autos_exog.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\autos_predict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\cubic_cyclic_splines_from_mgcv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\gam_PIRLS_results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\logit_gam_mgcv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\motorcycle.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\gam\tests\results\prediction_from_mgcv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\enet_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\enet_poisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\epil.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_linear_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_logistic_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_nested_linear_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_nominal_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_ordinal_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\gee_poisson_1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\igaussident_resids.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\inv_gaussian.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\iris.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\medparlogresids.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\results_tweedie_aweights_nonrobust.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\stata_cancer_glm.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\stata_lbw_glm.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\genmod\tests\results\stata_medpar1_glm.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\miscmodels\tests\results\ologit_ucla.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\multivariate\tests\results\factor_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\multivariate\tests\results\factors_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\results_kcde.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\results_kde_fft.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\results_kernel_regression.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\test_lowess_delta.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\test_lowess_frac.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\test_lowess_iter.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\nonparametric\tests\results\test_lowess_simple.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\othermod\tests\results\foodexpenditure.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\othermod\tests\results\methylation-test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\dietox.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lasso_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme00.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme02.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme04.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme05.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme06.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme07.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme08.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme09.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme10.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\lme11.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\pastes.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\results_rls_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\regression\tests\results\results_rls_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\sandbox\regression\tests\racd10data_with_transformed.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\binary_constrict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\bootleg.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\contingency_table_r_results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\framing.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\influence_measures_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\influence_measures_bool_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\results_influence_logit.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\wspec1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\wspec2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\stats\tests\results\wspec3.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\holtwinters\tests\results\housing-data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\regime_switching\tests\results\mar_filardo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\regime_switching\tests\results\results_predict_fedfunds.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\cfa_tvpvar_invP.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\cfa_tvpvar_state_variates.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\clark1989.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\exponential_smoothing_params.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\exponential_smoothing_predict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\exponential_smoothing_states.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\frbny_nowcast\Nowcasting\data\US\2016-06-29.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\frbny_nowcast\Nowcasting\data\US\2016-07-29.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_clark1989_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_dynamic_factor_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_common_level_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_common_level_restricted_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_dfm_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_local_level_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_local_linear_trend_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_local_linear_trend_missing_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_var1_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_var1_measurement_error_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_var1_missing_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_exact_initial_var1_mixed_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_intercepts_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_realgdpar_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_sarimax_coverage.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_simulation_smoothing3.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_simulation_smoothing3_variates.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_simulation_smoothing4.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_simulation_smoothing5.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_simulation_smoothing6.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_smoothing2_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_smoothing3_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_smoothing_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_smoothing_generalobscov_R.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_var_R_output.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_var_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_varmax_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_wpi1_ar3_matlab_ssm.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_wpi1_ar3_stata.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\statespace\tests\results\results_wpi1_missing_ar3_matlab_ssm.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\AROLSConstantPredict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\AROLSNoConstantPredict.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\arima111_forecasts.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\arima212_forecast.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\bds_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\bds_results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\gnpdef.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\rand10000.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\resids_css_c.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\resids_css_nc.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\resids_exact_c.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\resids_exact_nc.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_ar_forecast_mle_dynamic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_exog_forecasts_css.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_exog_forecasts_mle.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_forecasts.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_forecasts_all_css.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_forecasts_all_css_diff.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_forecasts_all_mle.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arima_forecasts_all_mle_diff.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\results_arma_forecasts.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\stkprc.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\stl_co2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\stl_test_results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\y_arma_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\yhat_css_c.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\yhat_css_nc.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\yhat_exact_c.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\tests\results\yhat_exact_nc.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\statsmodels\tsa\vector_ar\tests\Matlab_results\test_coint.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\~ystan\tests\data\blocker.1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Python39\Lib\site-packages\~ystan\tests\data\blocker.2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\gt_datum.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\ozi_datum.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\ozi_ellips.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\s57agencies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\s57attributes.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\s57expectedinput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\s57objectclasses.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\osgeo\data\gdal\stateplane.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\~ystan\tests\data\blocker.1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\AppData\Roaming\Python\Python39\site-packages\~ystan\tests\data\blocker.2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="C:\Users\strat\Downloads\query.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
