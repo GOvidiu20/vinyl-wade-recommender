@@ -2,7 +2,8 @@ from rdflib import Graph
 from rdflib.plugins.sparql import prepareQuery
 import requests
 
-from services.SPARQLQueryBuilder import SPARQLQueryBuilder
+# from services.SPARQLQueryBuilder import SPARQLQueryBuilder
+from services.SPARQLQueryBuilder2 import SPARQLQueryBuilder
 
 from google.cloud import storage
 
@@ -29,13 +30,13 @@ class QueryDTO:
 
 
 class SPARQLService:
-    # RDF_FILE_PATH = "VinylRecommender/data/modified_file.ttl"
+    # RDF_FILE_PATH = "VinylRecommender/data/output.ttl"
 
     def executeQuery(self, queryDTO: QueryDTO) -> VinylDTOS:
 
         storage_client = storage.Client()
-        bucket = storage_client.get_bucket("turtle_file")
-        blob = bucket.blob("modified_file.ttl")
+        bucket = storage_client.get_bucket("vinyl-recommender")
+        blob = bucket.blob("output.ttl")
 
         graph = Graph()
         graph.parse(blob.download_as_string(), format="turtle")
@@ -62,6 +63,7 @@ class SPARQLService:
         queryBuilder.add_filters(user_preferences)
         queryBuilder.end_query()
         queryBuilder.add_limit(limit)
+        print(queryBuilder.query)
         query_dto = QueryDTO(query=queryBuilder.query)
         result = self.executeQuery(query_dto)
         return result

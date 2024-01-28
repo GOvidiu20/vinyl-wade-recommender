@@ -1,4 +1,6 @@
 import spacy
+import csv
+from google.cloud import storage
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -25,12 +27,16 @@ def split_into_sentences(text):
 
 
 preferences = ["love", "like", "hate", "dislike"]
-genres = ["rock", "pop", "jazz", "classical", "metal", "hiphop", "rap", "electronic", "dance", "folk", "country"]
 comparators = ["from", "to", "before", "after"]
-artists = ["Angela Gheorghiu", "Åge Aleksandersen", "Ganafoul", "Verdi", "Rossini", "Flood", "Mroja", "Sonny", "Stan", "The Who", "The Rolling Stones"]
 
+storage_client = storage.Client()
+bucket = storage_client.get_bucket("vinyl-recommender")
+
+artists = bucket.blob("artists.txt").download_as_string().decode("utf-8").split("\r\n")
+genres = bucket.blob("genres.txt").download_as_string().decode("utf-8").split("\r\n")
 
 def process_music_preference(user_input):
+
     current_entities = {"preference": None, "genres": set(), "artists": set(), "years": [], "year_comparators": None}
     processed_results = []
     split_sentences = split_into_sentences(user_input)
@@ -56,11 +62,11 @@ def process_music_preference(user_input):
                 current_entities["genres"].add(token.text.lower())
 
             # Identify artists
-            if token.ent_type_ == 'PERSON' or token.pos_ == 'PROPN':
+            if token.text[0].isupper():
                 name = token.text
                 while i + avoid_token_flag < len(doc) - 1:
                     next_token = token.nbor()
-                    if next_token.ent_type_ == 'PERSON' or next_token.pos_ == 'PROPN':
+                    if next_token.text[0].isupper() or next_token.text == '&':
                         name += " " + next_token.text
                         token = next_token
                         avoid_token_flag += 1
@@ -102,9 +108,29 @@ def process_music_preference(user_input):
                         current_entities["year_comparators"] = "after"
 
         processed_results.append(current_entities)
-
         current_entities = {"preference": current_entities["preference"], "genres": current_entities["genres"],
                             "artists": set(), "years": [],
                             "year_comparators": None}
 
     return processed_results
+
+# def add_data_to_files():
+#     csv_file_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\query.csv'
+#     artists_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\artists.txt'
+#     genres_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\genres.txt'
+#
+#     with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
+#         csv_reader = csv.DictReader(csvfile)
+#
+#         for row in csv_reader:
+#             if row['artistLabel'] not in artists2:
+#                 artists2.append(row['artistLabel'])
+#             if row['genreLabel'] not in genres2:
+#                 genres2.append(row['genreLabel'])
+#     print(len(artists2), len(genres2))
+#     with open(artists_path, 'w', encoding='utf-8') as filehandle:
+#         for artist in artists2:
+#             filehandle.write(f'{artist}\n')
+#     with open(genres_path, 'w', encoding='utf-8') as filehandle:
+#         for genre in genres2:
+#             filehandle.write(f'{genre}\n')
