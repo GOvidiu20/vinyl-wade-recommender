@@ -17,6 +17,7 @@ class VinylDTO:
         self.vinylLabel = None
         self.title = None
         self.discogs = None
+        self.discogs_image = None
 
 
 class VinylDTOS:
@@ -51,8 +52,9 @@ class SPARQLService:
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
             vinylDTO.title = str(row.title)
-            vinylDTO.discogs = self.fetch_discogs_data(row.creator)
-
+            uri, image = self.fetch_discogs_data(row.creator)
+            vinylDTO.discogs = uri
+            vinylDTO.discogs_image = image
             vinylDTOS.vinylDTOS.append(vinylDTO)
 
         return vinylDTOS
@@ -90,7 +92,7 @@ class SPARQLService:
         if 'results' in data and data['results']:
             rs = data['results'][0]
             data2 = "https://www.discogs.com" + rs['uri']
-            return data2
+            return data2, rs['cover_image']
         else:
             return None
 
