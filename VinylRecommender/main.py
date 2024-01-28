@@ -1,8 +1,10 @@
 import json
+import os
+
 import xmltodict
 import flask
 from flask import request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from services.SPARQLService import SPARQLService
 from services.processUserData import process_music_preference
@@ -20,18 +22,22 @@ def get_songs():
     processed_results = process_music_preference(user_input)
     result = sparqlService.get_songs(processed_results, number)
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
+    print(json_string)
     return json_string
 
 
 @app.route('/spotify', methods=['POST'])
+@cross_origin()
 def spotify():
     data = request.get_json()
     result = sparqlService.spotify(data["artists"], data["genres"])
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
+    print(json_string)
     return json_string
 
 
 @app.route('/document', methods=['POST'])
+@cross_origin()
 def addDocument():
     file = request.files.get("file")
     file_content = file.read()
@@ -44,8 +50,9 @@ def addDocument():
     processed_results = process_music_preference(title_from_track)
     result = sparqlService.get_songs(processed_results, 10)
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
+    print(json_string)
     return json_string
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), timeout=300)
