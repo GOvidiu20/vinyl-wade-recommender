@@ -72,8 +72,7 @@ def process_music_preference(user_input):
                         avoid_token_flag += 1
                     else:
                         break
-                if name in artists:
-                    current_entities["artists"].add(name)
+                current_entities["artists"].add(name)
 
             # Identify years and date ranges
             if token.text.lower() == 'from':

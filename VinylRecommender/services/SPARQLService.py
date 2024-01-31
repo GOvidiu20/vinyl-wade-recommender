@@ -3,7 +3,7 @@ from rdflib.plugins.sparql import prepareQuery
 import requests
 
 # from services.SPARQLQueryBuilder import SPARQLQueryBuilder
-from services.SPARQLQueryBuilder2 import SPARQLQueryBuilder
+from services.SPARQLQueryBuilder3 import SPARQLQueryBuilder
 
 from google.cloud import storage
 
@@ -37,7 +37,7 @@ class SPARQLService:
 
         storage_client = storage.Client()
         bucket = storage_client.get_bucket("vinyl-recommender")
-        blob = bucket.blob("output.ttl")
+        blob = bucket.blob("music.ttl")
 
         graph = Graph()
         graph.parse(blob.download_as_string(), format="turtle")
@@ -46,12 +46,12 @@ class SPARQLService:
         vinylDTOS = VinylDTOS()
         for row in graph.query(query):
             vinylDTO = VinylDTO()
-            vinylDTO.album = str(row.album)
+            # vinylDTO.album = str(row.album)
             vinylDTO.creator = str(row.creator)
             vinylDTO.genre = str(row.subject)
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
-            vinylDTO.title = str(row.title)
+            # vinylDTO.title = str(row.title)
             uri, image = self.fetch_discogs_data(row.creator)
             vinylDTO.discogs = uri
             vinylDTO.discogs_image = image

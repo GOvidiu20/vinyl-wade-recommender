@@ -22,7 +22,7 @@ def get_songs():
     processed_results = process_music_preference(user_input)
     result = sparqlService.get_songs(processed_results, number)
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
-    print(json_string)
+
     return json_string
 
 
@@ -32,7 +32,7 @@ def spotify():
     data = request.get_json()
     result = sparqlService.spotify(data["artists"], data["genres"])
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
-    print(json_string)
+
     return json_string
 
 
@@ -50,9 +50,9 @@ def addDocument():
     processed_results = process_music_preference(title_from_track)
     result = sparqlService.get_songs(processed_results, 10)
     json_string = json.dumps([ob.__dict__ for ob in result.vinylDTOS])
-    print(json_string)
+
     return json_string
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), timeout=300)
+    app.run()
