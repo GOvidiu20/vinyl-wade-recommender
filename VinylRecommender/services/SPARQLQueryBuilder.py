@@ -4,35 +4,18 @@ class SPARQLQueryBuilder:
 
     def create_query(self):
         self.query = (
-            "PREFIX dcterms: <http://purl.org/dc/terms/>\n"
-            "PREFIX ns1: <http://example.org/>\n"
+            "PREFIX dc: <http://purl.org/dc/elements/1.1/>\n"
+            "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n"
+            "PREFIX ns1: <http://purl.org/ontology/mo/>\n"
             "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n"
-            "SELECT ?album ?vinylLabel ?creator ?date ?subject ?title\n"
+            "SELECT ?vinylLabel ?creator ?date ?subject \n"
             "WHERE {\n"
-            "  ?album a ns1:Album ;\n"
-            "         ns1:vinylLabel ?vinylLabel ;\n"
-            "         dcterms:creator ?creator ;\n"
-            "         dcterms:date ?date ;\n"
-            "         dcterms:subject ?subject ;\n"
-            "         dcterms:title ?title .\n"
+            "   ?vinyl a ns1:Track ;\n"
+            "         dc:title ?vinylLabel ;\n"
+            "         foaf:name ?creator ;\n"
+            "         ns1:genre ?subject ;\n"
+            "         dc:date ?date ;\n"
         )
-
-    def add_filter_date(self, operator, date_range):
-        operators_mapping = {
-            "after": ">",
-            "before": "<",
-            "to": "=",
-            "from": "=",
-            "between": ">=",
-        }
-
-        if operator in operators_mapping:
-            if operator == "between" and len(date_range) == 2:
-                self.query += f"  FILTER(YEAR(?date) {operators_mapping[operator]} {date_range[0]} && YEAR(?date) {operators_mapping['before']} {date_range[1]})\n"
-            else:
-                self.query += f"  FILTER(YEAR(?date) {operators_mapping[operator]} {date_range[0]})\n"
-        else:
-            raise ValueError("Invalid date filter operator")
 
     def add_filter_artist(self, artists_names):
         if not artists_names:
@@ -41,36 +24,14 @@ class SPARQLQueryBuilder:
         artist_filters = " || ".join([f'CONTAINS(LCASE(?creator), LCASE("{artist}"))' for artist in artists_names])
         self.query += f'  FILTER({artist_filters})\n'
 
-    def add_filter_not_artist(self, artist_names):
-        if not artist_names:
-            raise ValueError("No artist names provided")
-
-        artist_filters = " || ".join([f'CONTAINS(?creator, "{artist}")' for artist in artist_names])
-        self.query += f'  FILTER NOT EXISTS {{ ?album dcterms:creator ?creator .\n'
-        self.query += f'                     FILTER({artist_filters}) }}\n'
-
-    def add_filter_not_contains_genre(self, genre_names):
-        if not genre_names:
-            raise ValueError("No genre names provided")
-
-        genre_filters = " || ".join([f'CONTAINS(?subject, "{genre}")' for genre in genre_names])
-        self.query += f'  FILTER NOT EXISTS {{ ?album dcterms:subject ?genreValue .\n'
-        self.query += f'                   FILTER({genre_filters}) }}\n'
-
     def add_filter_genre(self, genres_names):
         if not genres_names:
             raise ValueError("No genre names provided")
 
-        genre_filters = " || ".join([f'CONTAINS(?subject, "{genre}")' for genre in genres_names])
+        genre_filters = " || ".join([f'CONTAINS(LCASE(?subject), LCASE("{genre}"))' for genre in genres_names])
         self.query += f'  FILTER({genre_filters})\n'
 
-    def add_filter_album(self, album_names):
-        if not album_names:
-            raise ValueError("No album names provided")
-        album_filters = " || ".join([f'CONTAINS(?vinylLabel, "{album}")' for album in album_names])
-        self.query += f'  FILTER({album_filters})\n'
-
-    def add_filter_date2(self, operator, date_range):
+    def add_filter_date(self, operator, date_range):
         operators_mapping = {
             "after": ">",
             "before": "<",
@@ -83,9 +44,9 @@ class SPARQLQueryBuilder:
 
         if operator in operators_mapping:
             if operator == "between" and len(date_range) == 2:
-                filter += f" YEAR(?date) {operators_mapping[operator]} {date_range[0]} && YEAR(?date) {operators_mapping['before']} {date_range[1]}"
+                filter += f" xsd:integer(?date ) {operators_mapping[operator]} {date_range[0]} && xsd:integer(?date ) {operators_mapping['before']} {date_range[1]}"
             else:
-                filter += f" YEAR(?date) {operators_mapping[operator]} {date_range[0]}"
+                filter += f" xsd:integer(?date ) {operators_mapping[operator]} {date_range[0]}"
         else:
             raise ValueError("Invalid date filter operator")
 
@@ -95,53 +56,70 @@ class SPARQLQueryBuilder:
         if not preferences:
             raise ValueError("No filters provided")
 
+        or_flag = False
+        love_filter = ""
+        hate_filter = ""
         for preference in preferences:
             and_flag = False
-            filter = ""
 
-            if preference["preference"] == "love":
+            if preference["preference"] == "love" or preference["preference"] == "like":
+
+                if or_flag:
+                    love_filter += " || "
+
+                love_filter += '('
+
                 if preference["artists"]:
-                    filter += " || ".join(
-                        [f'CONTAINS(LCASE(?creator), LCASE("{artist}"))' for artist in preference["artists"]])
+                    love_filter += " || ".join(
+                        [f'CONTAINS(LCASE(?creator ), LCASE("{artist}"))' for artist in preference["artists"]])
                     and_flag = True
                 if preference["genres"]:
                     if and_flag:
-                        filter += " && "
-                    filter += " || ".join(
-                        [f'CONTAINS(?subject, "{genre}")' for genre in preference["genres"]])
+                        love_filter += " && "
+                    love_filter += " || ".join(
+                        [f'CONTAINS(?subject , "{genre}")' for genre in preference["genres"]])
                     and_flag = True
 
                 if preference["years"]:
                     if and_flag:
-                        filter += " && "
-                    filter += self.add_filter_date2(preference["year_comparators"], preference["years"])
+                        love_filter += " && "
+                    love_filter += self.add_filter_date(preference["year_comparators"], preference["years"])
 
-                self.query += f'  FILTER({filter})\n'
-            elif preference["preference"] == "hate":
+                love_filter += ')'
+                or_flag = True
+            elif preference["preference"] == "hate" or preference["preference"] == "dislike":
                 filter = ""
                 if preference["artists"]:
                     artist_filter = " || ".join(
                         [f'CONTAINS(?creator, "{artist}")' for artist in preference["artists"]])
                     if preference["years"]:
                         artist_filter += " && "
-                        artist_filter += self.add_filter_date2(preference["year_comparators"], preference["years"])
+                        artist_filter += self.add_filter_date(preference["year_comparators"], preference["years"])
 
-                    filter += f' ?album dcterms:creator ?creator .\n'
-                    filter += f'                     FILTER({artist_filter})\n'
-                    and_flag = True
-                if preference["genres"]:
+                    filter += f'    ?vinyl foaf:name ?creator .\n'
+                    filter += f'    FILTER({artist_filter})\n'
+
+                elif preference["genres"]:
                     genre_filter = " || ".join(
                         [f'CONTAINS(?subject, "{genre}")' for genre in preference["genres"]])
                     if preference["years"]:
                         genre_filter += " && "
-                        genre_filter += self.add_filter_date2(preference["year_comparators"], preference["years"])
+                        genre_filter += self.add_filter_date(preference["year_comparators"], preference["years"])
 
+                    filter += f'    ?vinyl ns1:genre ?subject .\n'
+                    filter += f'    FILTER({genre_filter})\n'
+                elif preference["years"]:
                     if and_flag:
                         filter += " && "
-                    filter += f' ?album dcterms:subject ?genreValue .\n'
-                    filter += f'                     FILTER({genre_filter})\n'
+                    filter += f'    ?album schema:datePublished ?date .\n'
+                    filter += f'    FILTER({self.add_filter_date(preference["year_comparators"], preference["years"])})\n'
 
-                self.query += f'  FILTER NOT EXISTS {{ {filter} }}\n'
+                hate_filter += '  FILTER NOT EXISTS {' + filter + ' }\n'
+
+        if love_filter != "":
+            self.query += f'  FILTER({love_filter})\n'
+        if hate_filter != "":
+            self.query += hate_filter
 
     def add_limit(self, limit_value):
         if not isinstance(limit_value, int) or limit_value <= 0:

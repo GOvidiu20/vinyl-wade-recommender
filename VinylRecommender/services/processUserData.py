@@ -1,5 +1,4 @@
 import spacy
-import csv
 from google.cloud import storage
 
 nlp = spacy.load("en_core_web_sm")
@@ -72,7 +71,8 @@ def process_music_preference(user_input):
                         avoid_token_flag += 1
                     else:
                         break
-                current_entities["artists"].add(name)
+                if name in artists:
+                    current_entities["artists"].add(name)
 
             # Identify years and date ranges
             if token.text.lower() == 'from':
@@ -112,24 +112,3 @@ def process_music_preference(user_input):
                             "year_comparators": None}
 
     return processed_results
-
-# def add_data_to_files():
-#     csv_file_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\query.csv'
-#     artists_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\artists.txt'
-#     genres_path = 'C:\\Users\\Ovidiu\Desktop\\vinyl-wade-recommender\\VinylRecommender\\data\\genres.txt'
-#
-#     with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
-#         csv_reader = csv.DictReader(csvfile)
-#
-#         for row in csv_reader:
-#             if row['artistLabel'] not in artists2:
-#                 artists2.append(row['artistLabel'])
-#             if row['genreLabel'] not in genres2:
-#                 genres2.append(row['genreLabel'])
-#     print(len(artists2), len(genres2))
-#     with open(artists_path, 'w', encoding='utf-8') as filehandle:
-#         for artist in artists2:
-#             filehandle.write(f'{artist}\n')
-#     with open(genres_path, 'w', encoding='utf-8') as filehandle:
-#         for genre in genres2:
-#             filehandle.write(f'{genre}\n')

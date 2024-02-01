@@ -2,20 +2,18 @@ from rdflib import Graph
 from rdflib.plugins.sparql import prepareQuery
 import requests
 
-# from services.SPARQLQueryBuilder import SPARQLQueryBuilder
-from services.SPARQLQueryBuilder3 import SPARQLQueryBuilder
+import xmltodict
+from services.SPARQLQueryBuilder import SPARQLQueryBuilder
 
 from google.cloud import storage
 
 
 class VinylDTO:
     def __int__(self):
-        self.album = None
         self.creator = None
         self.genre = None
         self.date = None
         self.vinylLabel = None
-        self.title = None
         self.discogs = None
         self.discogs_image = None
 
@@ -31,7 +29,6 @@ class QueryDTO:
 
 
 class SPARQLService:
-    # RDF_FILE_PATH = "VinylRecommender/data/output.ttl"
 
     def executeQuery(self, queryDTO: QueryDTO) -> VinylDTOS:
 
@@ -41,17 +38,15 @@ class SPARQLService:
 
         graph = Graph()
         graph.parse(blob.download_as_string(), format="turtle")
-        # graph.parse(self.RDF_FILE_PATH, format="turtle")
+
         query = prepareQuery(queryDTO.query)
         vinylDTOS = VinylDTOS()
         for row in graph.query(query):
             vinylDTO = VinylDTO()
-            # vinylDTO.album = str(row.album)
             vinylDTO.creator = str(row.creator)
             vinylDTO.genre = str(row.subject)
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
-            # vinylDTO.title = str(row.title)
             uri, image = self.fetch_discogs_data(row.creator)
             vinylDTO.discogs = uri
             vinylDTO.discogs_image = image
@@ -59,13 +54,12 @@ class SPARQLService:
 
         return vinylDTOS
 
-    def get_songs(self, user_preferences, limit):
+    def get_songs(self, user_preferences):
         queryBuilder = SPARQLQueryBuilder("")
         queryBuilder.create_query()
         queryBuilder.add_filters(user_preferences)
         queryBuilder.end_query()
-        queryBuilder.add_limit(limit)
-        print(queryBuilder.query)
+        queryBuilder.add_limit(18)
         query_dto = QueryDTO(query=queryBuilder.query)
         result = self.executeQuery(query_dto)
         return result
@@ -78,7 +72,25 @@ class SPARQLService:
         if genres:
             queryBuilder.add_filter_genre(genres)
         queryBuilder.end_query()
-        queryBuilder.add_limit(20)
+        queryBuilder.add_limit(18)
+        query_dto = QueryDTO(query=queryBuilder.query)
+        result = self.executeQuery(query_dto)
+        return result
+
+    def document(self, file_content):
+        data_dict = xmltodict.parse(file_content)
+        track_list = data_dict['playlist']['trackList']['track']
+        artists = []
+        for track in track_list:
+            for artist in track['creator'].split(", "):
+                if artist not in artists:
+                    artists.append(artist)
+
+        queryBuilder = SPARQLQueryBuilder("")
+        queryBuilder.create_query()
+        queryBuilder.add_filter_artist(artists)
+        queryBuilder.end_query()
+        queryBuilder.add_limit(18)
         query_dto = QueryDTO(query=queryBuilder.query)
         result = self.executeQuery(query_dto)
         return result
@@ -95,32 +107,3 @@ class SPARQLService:
             return data2, rs['cover_image']
         else:
             return None
-
-
-# if __name__ == "__main__":
-#     sparql_service = SPARQLService()
-#     queryBuilder = SPARQLQueryBuilder("")
-#     queryBuilder.create_query()
-#     # queryBuilder.add_filter_date("between", ["1973", "1999"])
-#
-#     # queryBuilder.add_filter_artist(["Sonny", "Stan"])
-#     # queryBuilder.add_filter_genre(["pop", "rock"])
-#     # queryBuilder.add_filter_not_contains_genre(["pop rock", "rock music"])
-#     # queryBuilder.add_filter_not_artist(["Sonny", "Stan"])
-#     # queryBuilder.add_filter_album(["Hammer to Fall", "Who's Missing"])
-#     queryBuilder.end_query()
-#     queryBuilder.add_limit(15)
-#
-#     query_dto = QueryDTO(query=queryBuilder.query)
-#     print(queryBuilder.query)
-#
-#     result = sparql_service.executeQuery(query_dto)
-#
-#     for vinyl_dto in result.vinylDTOS:
-#         print("Album:", vinyl_dto.album)
-#         print("Creator:", vinyl_dto.creator)
-#         print("Subject:", vinyl_dto.subject)
-#         print("Date:", vinyl_dto.date)
-#         print("Vinyl Label:", vinyl_dto.vinylLabel)
-#         print("Title:", vinyl_dto.title)
-#         print()
