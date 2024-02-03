@@ -48,9 +48,10 @@ class SPARQLService:
             vinylDTO.date = str(row.date)
             vinylDTO.vinylLabel = str(row.vinylLabel)
             uri, image = self.fetch_discogs_data(row.creator)
-            vinylDTO.discogs = uri
-            vinylDTO.discogs_image = image
-            vinylDTOS.vinylDTOS.append(vinylDTO)
+            if uri and image:
+                vinylDTO.discogs = uri
+                vinylDTO.discogs_image = image
+                vinylDTOS.vinylDTOS.append(vinylDTO)
 
         return vinylDTOS
 
@@ -96,6 +97,7 @@ class SPARQLService:
         return result
 
     def fetch_discogs_data(self, artist_name):
+        print(artist_name)
         api_key = "yGrcPrZCSijvHSNdbtsk"
         api_secret = "crhtnFdQcgXMVXYtgzBYJnbBGSWOmSZA"
         discogs_url = f"https://api.discogs.com/database/search?q={artist_name}&key={api_key}&secret={api_secret}"
@@ -106,4 +108,4 @@ class SPARQLService:
             data2 = "https://www.discogs.com" + rs['uri']
             return data2, rs['cover_image']
         else:
-            return None
+            return None, None

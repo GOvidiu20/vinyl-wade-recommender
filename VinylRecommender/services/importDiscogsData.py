@@ -38,23 +38,26 @@ def get_all_vinyl_releases():
                         for artist in track.artists:
                             if artist.name not in artists:
                                 artists.append(artist.name)
-                                with open('../data1/artists.txt', 'a', encoding='utf-8') as filehandle:
+                                with open('../data/artists.txt', 'a', encoding='utf-8') as filehandle:
                                     filehandle.write(f'{artist.name}\n')
 
                             g.add((release_uri, foaf['name'], Literal(artist.name)))
 
+                        genresText = ""
                         for genre in track.genres:
                             genre = genre.lower()
+                            genresText += genre + ", "
                             if genre not in genres:
                                 genres.append(genre)
-                                with open('../data1/genres.txt', 'a', encoding='utf-8') as filehandle:
+                                with open('../data/genres.txt', 'a', encoding='utf-8') as filehandle:
                                     filehandle.write(f'{genre}\n')
 
-                            g.add((release_uri, mo['genre'], Literal(genre)))
+                        genresText = genresText[:-2]
+                        g.add((release_uri, mo['genre'], Literal(genresText)))
 
                         ttl_data = g.serialize(format='turtle')
                         # Append TTL data to the file
-                        with open('../data1/music.ttl', 'a') as ttl_file:
+                        with open('../data/music.ttl', 'a') as ttl_file:
                             ttl_file.write(ttl_data)
                 except UnicodeEncodeError as e:
                     continue
