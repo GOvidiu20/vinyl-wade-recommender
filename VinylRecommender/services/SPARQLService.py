@@ -1,11 +1,8 @@
-from rdflib import Graph
-from rdflib.plugins.sparql import prepareQuery
+from stardog import Connection
 import requests
 
 import xmltodict
 from services.SPARQLQueryBuilder import SPARQLQueryBuilder
-
-from google.cloud import storage
 
 
 class VinylDTO:
@@ -29,25 +26,26 @@ class QueryDTO:
 
 
 class SPARQLService:
+    conn_details = {
+        'endpoint': 'https://sd-a3138be8.stardog.cloud:5820/vire/query',
+        'username': 'stratianub45@gmail.com',
+        'password': 'RbWWZPsSwk9U29N'
+    }
 
     def executeQuery(self, queryDTO: QueryDTO) -> VinylDTOS:
 
-        storage_client = storage.Client()
-        bucket = storage_client.get_bucket("vinyl-recommender")
-        blob = bucket.blob("music.ttl")
-
-        graph = Graph()
-        graph.parse(blob.download_as_string(), format="turtle")
-
-        query = prepareQuery(queryDTO.query)
+        conn = Connection('vire', endpoint='https://sd-a3138be8.stardog.cloud:5820',
+                          username='stratianub45@gmail.com', password='RbWWZPsSwk9U29N')
+        result = conn.select(queryDTO.query)
+        print(result)
         vinylDTOS = VinylDTOS()
-        for row in graph.query(query):
+        for row in result['results']['bindings']:
             vinylDTO = VinylDTO()
-            vinylDTO.creator = str(row.creator)
-            vinylDTO.genre = str(row.subject)
-            vinylDTO.date = str(row.date)
-            vinylDTO.vinylLabel = str(row.vinylLabel)
-            uri, image = self.fetch_discogs_data(row.creator)
+            vinylDTO.creator = str(row['creator']['value'])
+            vinylDTO.genre = str(row['subject']['value'])
+            vinylDTO.date = str(row['date']['value'])
+            vinylDTO.vinylLabel = str(row['vinylLabel']['value'])
+            uri, image = self.fetch_discogs_data(row['creator']['value'])
             if uri and image:
                 vinylDTO.discogs = uri
                 vinylDTO.discogs_image = image
@@ -97,7 +95,6 @@ class SPARQLService:
         return result
 
     def fetch_discogs_data(self, artist_name):
-        print(artist_name)
         api_key = "yGrcPrZCSijvHSNdbtsk"
         api_secret = "crhtnFdQcgXMVXYtgzBYJnbBGSWOmSZA"
         discogs_url = f"https://api.discogs.com/database/search?q={artist_name}&key={api_key}&secret={api_secret}"
